@@ -19,14 +19,14 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp B               &kp Y           &kp O               &kp U             &kp SINGLE_QUOTE    &kp SEMI    &kp L              &kp D       &kp W            &kp V        &kp Z
+&kp TILDE  &kp B               &kp Y           &kp O               &kp U             &kp SINGLE_QUOTE    &kp SEMI    &kp L              &kp D       &kp W            &kp V        &kp Z
 &kp LCTRL  &mt LEFT_CONTROL C  &mt LEFT_ALT I  &mt LEFT_COMMAND E  &mt LEFT_SHIFT A  &kp COMMA           &kp PERIOD  &mt RIGHT_SHIFT H  &mt RCMD T  &mt RIGHT_ALT S  &mt RCTRL N  &kp Q
 &kp LSHFT  &kp G               &kp X           &kp J               &kp K             &kp MINUS           &kp SLASH   &kp R              &kp M       &kp F            &kp P        &kp ESC
-                                               &kp ESCAPE          &tog 1            &kp SPACE           &kp RET     &mo 2              &kp RALT
+                                               &kp ESCAPE          &lt 2 BACKSPACE   &lt 3 DEL           &lt 3 TAB   &lt 1 SPACE        &kp RET
             >;
         };
 
-        symbol_layer {
+        symbol {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -34,14 +34,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp EXCLAMATION  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp QUESTION    &trans     &kp PG_UP      &kp UP_ARROW    &kp PAGE_DOWN  &trans            &kp BSPC
-&kp HASH         &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR       &kp ASTERISK    &trans     &kp LEFT       &kp DOWN_ARROW  &kp RIGHT      &kp END           &trans
-&kp AT_SIGN      &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS         &kp GRAVE       &kp TILDE  &kp LESS_THAN  &kp PIPE        &kp MINUS      &kp GREATER_THAN  &kp BACKSLASH
-                                                       &trans                 &tog 0           &kp SPACE       &kp RET    &trans         &trans
+&kp EXCLAMATION  &kp LEFT_BRACE  &kp SQT    &kp DOUBLE_QUOTES  &kp RIGHT_BRACE   &kp QUESTION     &trans  &kp GRAVE              &trans             &trans         &kp PERCENT       &kp BSPC
+&kp HASH         &kp CARET       &kp EQUAL  &kp UNDERSCORE     &kp DOLLAR        &kp ASTERISK     &trans  &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp AMPERSAND  &kp PLUS          &trans
+&kp TILDE        &kp LESS_THAN   &kp PIPE   &kp MINUS          &kp GREATER_THAN  &kp BACKSLASH    &trans  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp MINUS      &kp GREATER_THAN  &kp BACKSLASH
+                                            &trans             &trans            &trans           &to 0   &trans                 &trans
             >;
         };
 
-        raise_layer {
+        cursor {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -49,10 +49,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp C_AC_SEARCH                    &sk LEFT_SHIFT  &kp K_REDO    &kp K_UNDO  &kp BACKSPACE   &kp K_CUT      &kp K_CUT    &kp BACKSPACE  &kp K_UNDO    &kp K_REDO  &sk RIGHT_SHIFT  &kp C_AC_SEARCH
+&kp LCTRL                          &kp LCTRL       &kp LEFT_ALT  &kp LCMD    &kp LEFT_SHIFT  &kp K_COPY     &kp K_COPY   &kp LEFT       &kp UP_ARROW  &kp DOWN    &kp RIGHT_ARROW  &kp GRAVE
+&kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans          &trans        &trans      &kp K_FIND      &kp K_PASTE    &kp K_PASTE  &kp HOME       &kp PG_UP     &kp PG_DN   &kp END          &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
+                                                                 &trans      &trans          &to 0          &trans       &trans         &trans
+            >;
+        };
+
+        lower {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans  &trans
+                        &trans  &to 2   &trans    &trans        &to 1         &trans
             >;
         };
     };
